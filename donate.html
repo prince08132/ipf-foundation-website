@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Donate | IPF</title>
+
+<link rel="stylesheet" href="assets/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="main-header">
+
+<div class="logo">
+<a href="index.html">
+<img src="assets/images/ipf logo.png" alt="IPF Logo">
+</a>
+</div>
+
+
+<div class="menu-toggle" id="menuToggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<nav class="nav-menu" id="navMenu">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="programs.html">Programs</a></li>
+<li><a href="stories.html">Stories</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="donate.html" class="donate-btn active">Donate</a>
+
+</nav>
+
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+
+
+<!-- HERO -->
+
+
+<section class="page-hero">
+
+<h1>Support a Life Today</h1>
+
+<p>
+Your donation helps dialysis patients access life-saving treatment.
+</p>
+
+</section>
+
+
+
+<!-- DONATION SECTION -->
+
+<section class="donation">
+
+<div class="container donation-container">
+
+<h2>Support Our Mission</h2>
+
+<p class="donation-intro">
+You can support dialysis patients by making a direct bank transfer to the
+foundation account below.
+</p>
+
+
+<!-- Donation Progress -->
+
+<div class="donation-progress">
+
+<h3>Dialysis Support Goal</h3>
+
+<div class="progress-bar">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+<p id="progressText">₦2,500,000 raised of ₦5,000,000 goal</p>
+
+</div>
+
+
+
+<!-- BANK DETAILS CARD -->
+
+<div class="bank-details">
+
+<h3>Bank Transfer Details</h3>
+
+<div class="bank-info">
+
+<p>
+<strong>Account Name</strong><br>
+ITOHAN PHILOMENA FOUNDATION (IPF)
+</p>
+
+<p>
+<strong>Bank</strong><br>
+Keystone Bank
+</p>
+
+<p class="account-number">
+<strong>Account Number</strong><br>
+<span id="accountNumber">1014116019</span>
+</p>
+
+</div>
+
+<button class="copy-btn" onclick="copyAccount()" id="copyBtn">
+Copy Account Number
+</button>
+
+<span id="copyMessage"></span>
+
+</div>
+
+
+<p class="transfer-note">
+After making your transfer, kindly submit your payment confirmation below.
+</p>
+
+
+<!-- PAYMENT CONFIRMATION FORM -->
+
+<form class="donation-proof" onsubmit="sendDonation(event)">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<div class="receipt-preview">
+<img id="receiptImage" style="display:none; max-width:200px; margin-top:10px;">
+</div>
+
+
+
+<!-- Receipt Upload -->
+
+<div class="upload-card">
+
+<label for="receiptUpload">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+<p>Upload Payment Receipt</p>
+
+<span>JPG, PNG, or PDF</span>
+
+</label>
+
+<input type="file" name="payment_proof" id="receiptUpload">
+
+</div>
+
+
+<!-- Submit Button -->
+
+<button type="submit" class="primary-btn">
+
+<span id="btnText">Submit Payment Confirmation</span>
+
+<span id="loader" class="loader"></span>
+
+<p id="successMessage" style="display:none;color:green;">
+Payment confirmation sent successfully!
+</p>
+
+</button>
+
+
+</form>
+
+<div class="donor-wall">
+
+<h3>Recent Supporters</h3>
+
+<ul id="donorList">
+
+<li>Sarah O. – ₦20,000</li>
+<li>Michael A. – ₦50,000</li>
+<li>Anonymous – ₦10,000</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- IMPACT MESSAGE -->
+
+<section class="impact-quote">
+
+<div class="container">
+
+<p>
+"Your generosity can give someone another chance at life."
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="premium-footer">
+
+<div class="footer-container">
+
+<div class="footer-about">
+
+<h3>IPF Foundation</h3>
+
+<p>
+Supporting dialysis patients and raising awareness about kidney health
+across communities.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<h4>Quick Links</h4>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="programs.html">Programs</a></li>
+<li><a href="stories.html">Stories</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+
+<div class="footer-social">
+
+<h4>Follow Us</h4>
+
+<div class="social-icons">
+
+<a href="https://www.instagram.com/itohan_philomena_foundation?igsh=MXh0Y3dkZGxtemR4dQ%3D%3D&utm_source=qr" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://x.com/itohan_olat?s=21" target="_blank">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 IPF Foundation | Empowering Lives One Dialysis at a Time 
+<span class="heart">❤</span>
+</p>
+
+</div>
+
+
+<!-- DONATION MODAL -->
+
+<div id="donationModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Thank You ❤️</h2>
+
+<p>Your donation confirmation has been sent.</p>
+
+<button onclick="closeModal()">Close</button>
+
+</div>
+
+</div>
+
+
+</footer>
+
+<a href="donate.html" class="floating-donate">
+<i class="fa-solid fa-heart"></i> Donate
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("WfnrL3G_lkMQHvcNw");
+})();
+</script>
+
+
+<script src="assets/script.js"></script>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+</body>
+</html>
